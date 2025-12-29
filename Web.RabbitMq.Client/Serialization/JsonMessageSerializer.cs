@@ -5,8 +5,8 @@ using System.Text.Json.Serialization;
 namespace Web.RabbitMq.Client.Serialization;
 
 
-/// <inheritdoc cref="IJsonMessageSerializer"/>
-public class JsonMessageSerializer : IJsonMessageSerializer
+/// <inheritdoc cref="IRabbitMqJsonMessageSerializer"/>
+public class RabbitMqJsonMessageSerializer : IRabbitMqJsonMessageSerializer
 {
     private static JsonSerializerOptions _jsonSerializerOptions = new()
     {

@@ -3,7 +3,7 @@ namespace Web.RabbitMq.Client.Serialization;
 /// <summary>
 /// Интерфейс для управления способом сериализации сообщений в Json
 /// </summary>
-public interface IJsonMessageSerializer
+public interface IRabbitMqJsonMessageSerializer
 {
     /// <summary>
     /// Преобразует объект в JSON

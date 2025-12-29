@@ -10,28 +10,28 @@ public class RabbitMqMessageSender : IRabbitMqMessageSender
 {
     private readonly IRabbitMqConnectionManager _connectionManager;
     private readonly IRabbitMqCorrelationIdContext _correlationIdContext;
-    private readonly IJsonMessageSerializer _jsonMessageSerializer;
+    private readonly IRabbitMqJsonMessageSerializer _rabbitMqJsonMessageSerializer;
 
     /// <summary>
     ///     Ctor
     /// </summary>
     /// <param name="correlationIdContext">Предоставляет доступ к CorrelationId в текущем контексте</param>
     /// <param name="connectionManager">Класс для управления пулом подключений</param>
-    /// <param name="jsonMessageSerializer">Сериализатор сообщений</param>
+    /// <param name="rabbitMqJsonMessageSerializer">Сериализатор сообщений</param>
     public RabbitMqMessageSender(
         IRabbitMqCorrelationIdContext correlationIdContext,
         IRabbitMqConnectionManager connectionManager,
-        IJsonMessageSerializer jsonMessageSerializer)
+        IRabbitMqJsonMessageSerializer rabbitMqJsonMessageSerializer)
     {
         _correlationIdContext = correlationIdContext;
         _connectionManager = connectionManager;
-        _jsonMessageSerializer = jsonMessageSerializer;
+        _rabbitMqJsonMessageSerializer = rabbitMqJsonMessageSerializer;
     }
 
     /// <inheritdoc
     public void Send<T>(T message, string exchangeName, string commandName, string requestType)
     {
-        string jsonMessage = _jsonMessageSerializer.Serialize(message);
+        string jsonMessage = _rabbitMqJsonMessageSerializer.Serialize(message);
         ValidateSendParameters(jsonMessage, exchangeName, commandName, requestType);
 
         RabbitMqConnection connection = _connectionManager.GetOrCreateSenderConnection();

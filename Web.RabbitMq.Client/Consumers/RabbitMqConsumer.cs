@@ -23,7 +23,7 @@ public abstract class RabbitMqConsumer<T> : IRabbitMqConsumer, IDisposable
     private CancellationTokenSource _listenerStartedCancellationTokenSource;
     private Task _listenerStartedTask;
     private readonly ILogger<RabbitMqConsumer<T>> _logger;
-    private readonly IJsonMessageSerializer _jsonMessageSerializer;
+    private readonly IRabbitMqJsonMessageSerializer _rabbitMqJsonMessageSerializer;
     private IModel _model;
     private const string RabbitMqOnMyMessageEventName = "My.RabbitMq.OnMessage";
 
@@ -34,12 +34,12 @@ public abstract class RabbitMqConsumer<T> : IRabbitMqConsumer, IDisposable
         IRabbitMqConnectionManager connectionManager,
         ILogger<RabbitMqConsumer<T>> logger,
         IRabbitMqMessageHandler<T> rabbitMqMessageHandler,
-        IJsonMessageSerializer jsonMessageSerializer)
+        IRabbitMqJsonMessageSerializer rabbitMqJsonMessageSerializer)
     {
         RabbitMqConnectionManager = connectionManager;
         _logger = logger;
         _rabbitMqMessageHandler = rabbitMqMessageHandler;
-        _jsonMessageSerializer = jsonMessageSerializer ?? new JsonMessageSerializer();
+        _rabbitMqJsonMessageSerializer = rabbitMqJsonMessageSerializer ?? new RabbitMqJsonMessageSerializer();
     }
     
     /// <summary>
@@ -126,7 +126,7 @@ public abstract class RabbitMqConsumer<T> : IRabbitMqConsumer, IDisposable
             _logger.LogInformation("Message received: {stringBody}, headers: {headers} on {type}",
                 new object[]{ stringBody, headers, GetType().Name });
             
-            T data = _jsonMessageSerializer.Deserialize<T>(stringBody);
+            T data = _rabbitMqJsonMessageSerializer.Deserialize<T>(stringBody);
             RabbitMqMessage<T> message = new(command,  correlationId, requestType, data);
 
             try
