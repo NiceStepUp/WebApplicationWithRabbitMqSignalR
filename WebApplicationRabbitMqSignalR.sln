@@ -3,9 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35931.197 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplicationRabbitMqSignalR", "WebApplicationRabbitMqSignalR\WebApplicationRabbitMqSignalR.csproj", "{6E1A1BD8-37BC-4E1C-AF39-B8AE6FD7B648}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather.WebApplicationRabbitMqSignalR", "Weather.WebApplicationRabbitMqSignalR\Weather.WebApplicationRabbitMqSignalR.csproj", "{6E1A1BD8-37BC-4E1C-AF39-B8AE6FD7B648}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.RabbitMq.Client", "Web.RabbitMq.Client\Web.RabbitMq.Client.csproj", "{43A48644-B3E9-4A13-9551-02C9ED47295F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather.RabbitMq.Client", "Weather.RabbitMq.Client\Weather.RabbitMq.Client.csproj", "{43A48644-B3E9-4A13-9551-02C9ED47295F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather.Services", "Weather.Services\Weather.Services.csproj", "{D5336279-AB18-4A46-A166-74DBBA55DD43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather.Persistence", "Weather.Persistence\Weather.Persistence.csproj", "{B55AEBB7-7F80-4BA7-AF7E-0F4E8B2929C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather.Common", "Weather.Common\Weather.Common.csproj", "{81288D48-02B4-4FE2-BFBD-60751766E80D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather.Services.Tests", "Weather.Services.Tests\Weather.Services.Tests.csproj", "{59F8CF22-FBFF-499C-AFC7-9369CC5CCFE1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +29,22 @@ Global
 		{43A48644-B3E9-4A13-9551-02C9ED47295F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43A48644-B3E9-4A13-9551-02C9ED47295F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43A48644-B3E9-4A13-9551-02C9ED47295F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5336279-AB18-4A46-A166-74DBBA55DD43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5336279-AB18-4A46-A166-74DBBA55DD43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5336279-AB18-4A46-A166-74DBBA55DD43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5336279-AB18-4A46-A166-74DBBA55DD43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B55AEBB7-7F80-4BA7-AF7E-0F4E8B2929C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B55AEBB7-7F80-4BA7-AF7E-0F4E8B2929C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B55AEBB7-7F80-4BA7-AF7E-0F4E8B2929C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B55AEBB7-7F80-4BA7-AF7E-0F4E8B2929C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81288D48-02B4-4FE2-BFBD-60751766E80D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81288D48-02B4-4FE2-BFBD-60751766E80D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81288D48-02B4-4FE2-BFBD-60751766E80D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81288D48-02B4-4FE2-BFBD-60751766E80D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59F8CF22-FBFF-499C-AFC7-9369CC5CCFE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59F8CF22-FBFF-499C-AFC7-9369CC5CCFE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59F8CF22-FBFF-499C-AFC7-9369CC5CCFE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59F8CF22-FBFF-499C-AFC7-9369CC5CCFE1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
