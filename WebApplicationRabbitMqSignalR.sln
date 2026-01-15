@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather.Common", "Weather.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather.Services.Tests", "Weather.Services.Tests\Weather.Services.Tests.csproj", "{59F8CF22-FBFF-499C-AFC7-9369CC5CCFE1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{D257B873-E5AC-458F-B129-10DBB077D7E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,5 +53,8 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {02728B3A-805A-4689-BFD7-87BE90AAC1E4}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{59F8CF22-FBFF-499C-AFC7-9369CC5CCFE1} = {D257B873-E5AC-458F-B129-10DBB077D7E3}
 	EndGlobalSection
 EndGlobal
